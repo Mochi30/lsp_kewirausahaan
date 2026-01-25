@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LSP Kewirausahaan - Pusat Sertifikasi Kompetensi</title>
+  <meta name="description" content="LSP Kewirausahaan: sertifikasi kompetensi kewirausahaan dengan alur jelas, skema terarah, dan pendaftaran yang mudah." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a class="brand" href="index.html" aria-label="Beranda">
+        <img src="assets/logo.svg" class="brand__logo" alt="Logo LSP Kewirausahaan">
+        <span class="brand__name">LSP <span class="accent">Kewirausahaan</span></span>
+      </a>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Buka menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav__menu" id="navMenu">
+        <li><a class="nav__link nav__link--active" href="index.html">Beranda</a></li>
+        <li><a class="nav__link" href="tentang.html">Tentang</a></li>
+        <li><a class="nav__link" href="skema.html">Skema</a></li>
+        <li><a class="nav__link" href="prosedur.html">Prosedur</a></li>
+        <li><a class="nav__link" href="faq.html">FAQ</a></li>
+        <li><a class="btn btn--small" href="#daftar">Daftar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="badge"><i class="fa-solid fa-certificate"></i> Sertifikasi Kompetensi - Standar Nasional</p>
+          <h1>Validasi <span class="accent">Jiwa Bisnis</span> Anda Secara Profesional</h1>
+          <p class="muted">
+            Dapatkan pengakuan kompetensi nasional dalam bidang kewirausahaan. Tingkatkan kredibilitas,
+            kesiapan kerja, dan peluang karir maupun bisnis bersama LSP Kewirausahaan.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn" href="#daftar"><i class="fa-solid fa-file-pen"></i> Daftar Sekarang</a>
+            <a class="btn btn--ghost" href="skema.html"><i class="fa-solid fa-layer-group"></i> Lihat Skema</a>
+          </div>
+
+          <div class="chips">
+            <span class="chip"><i class="fa-solid fa-check"></i> Asesor kompeten</span>
+            <span class="chip"><i class="fa-solid fa-check"></i> TUK mitra</span>
+            <span class="chip"><i class="fa-solid fa-check"></i> Online atau onsite</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quick links -->
+    <section class="section" id="explore">
+      <div class="container">
+        <div class="section__head">
+          <h2>Mulai dari sini</h2>
+        </div>
+
+        <div class="quick-links">
+          <a class="card link-card" href="tentang.html">
+            <div class="link-card__icon"><i class="fa-solid fa-compass"></i></div>
+            <h3>Tentang LSP</h3>
+            <p class="muted">Profil, nilai, dan komitmen layanan.</p>
+          </a>
+          <a class="card link-card" href="skema.html">
+            <div class="link-card__icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h3>Skema Sertifikasi</h3>
+            <p class="muted">Daftar skema dan unit kompetensi.</p>
+          </a>
+          <a class="card link-card" href="prosedur.html">
+            <div class="link-card__icon"><i class="fa-solid fa-route"></i></div>
+            <h3>Prosedur Uji</h3>
+            <p class="muted">Alur, persyaratan, dan dokumen.</p>
+          </a>
+          <a class="card link-card" href="faq.html">
+            <div class="link-card__icon"><i class="fa-solid fa-circle-question"></i></div>
+            <h3>FAQ</h3>
+            <p class="muted">Jawaban cepat untuk pertanyaan umum.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistik -->
+    <section class="section section--alt" id="statistik">
+      <div class="container">
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__num" data-count="1200">0</div>
+            <div class="stat__label">Asesi Terlayani</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="45">0</div>
+            <div class="stat__label">TUK Mitra</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num" data-count="98">0</div>
+            <div class="stat__label">% Kepuasan</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alur ringkas -->
+    <section class="section" id="alur-ringkas">
+      <div class="container">
+        <div class="section__head">
+          <h2>Alur Singkat</h2>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <div class="step__num">1</div>
+            <div>
+              <h3>Daftar dan Pilih Skema</h3>
+              <p class="muted">Isi form pendaftaran dan pilih skema yang sesuai kebutuhan.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__num">2</div>
+            <div>
+              <h3>Verifikasi dan Penjadwalan</h3>
+              <p class="muted">Tim memeriksa dokumen dan mengonfirmasi jadwal asesmen.</p>
+            </div>
+          </li>
+          <li class="step">
+            <div class="step__num">3</div>
+            <div>
+              <h3>Asesmen dan Sertifikat</h3>
+              <p class="muted">Uji kompetensi bersama asesor hingga sertifikat terbit.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Daftar -->
+    <section class="section section--alt" id="daftar">
+      <div class="container">
+        <div class="section__head">
+          <h2>Daftar Sertifikasi</h2>
+        </div>
+
+        <form class="form card" id="regForm" novalidate>
+          <div class="grid-2">
+            <label>
+              Nama Lengkap
+              <input type="text" name="nama" placeholder="Nama kamu" required />
+              <small class="error"></small>
+            </label>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="nama@email.com" required />
+              <small class="error"></small>
+            </label>
+          </div>
+
+          <div class="grid-2">
+            <label>
+              Nomor WhatsApp
+              <input type="tel" name="wa" placeholder="08xxxxxxxxxx" required />
+              <small class="error"></small>
+            </label>
+
+            <label>
+              Pilih Skema
+              <select name="skema" required id="schemeSelect">
+                <option value="">-- Pilih --</option>
+              </select>
+              <small class="error"></small>
+            </label>
+          </div>
+
+          <label>
+            Catatan (opsional)
+            <textarea name="catatan" rows="4" placeholder="Ceritakan singkat kebutuhanmu..."></textarea>
+          </label>
+
+          <div class="form__actions">
+            <button class="btn" type="submit"><i class="fa-solid fa-paper-plane"></i> Kirim</button>
+            <label class="check">
+              <input type="checkbox" id="sendToWhatsApp" />
+              <span>Kirim juga ke WhatsApp (buka chat admin)</span>
+            </label>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer__grid">
+        <div>
+          <div class="brand brand--footer">
+            <img src="assets/logo.svg" class="brand__logo" alt="Logo LSP Kewirausahaan">
+            <span class="brand__name">LSP <span class="accent">Kewirausahaan</span></span>
+          </div>
+          <p class="muted">Pusat sertifikasi kompetensi kewirausahaan siap membantu Anda berkembang.</p>
+        </div>
+
+        <div>
+          <h4>Kontak</h4>
+          <ul class="footer__list">
+            <li><i class="fa-solid fa-envelope"></i> info@lspkewirausahaan.id</li>
+            <li><i class="fa-brands fa-whatsapp"></i> +62 800-0000-0000</li>
+            <li><i class="fa-solid fa-location-dot"></i> Indonesia</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Tautan</h4>
+          <ul class="footer__list">
+            <li><a href="tentang.html">Tentang</a></li>
+            <li><a href="skema.html">Skema</a></li>
+            <li><a href="prosedur.html">Prosedur</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom container">
+        <small>Hak cipta <span id="year"></span> LSP Kewirausahaan. All rights reserved.</small>
+        <a class="to-top" href="#top" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
+    </footer>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
