@@ -121,6 +121,7 @@ async function loadRegistrations() {
         <td>${r.schemeTitle || "-"}</td>
         <td>${r.notes || "-"}</td>
         <td>${new Date(r.createdAt).toLocaleString("id-ID")}</td>
+        <td><button class="btn btn--ghost btn--small js-del-reg" data-id="${r.id}">Hapus</button></td>
       </tr>
     `
     )
@@ -249,6 +250,19 @@ faqsList?.addEventListener("click", async (e) => {
     });
     await loadFaqs();
   }
+});
+
+registrationsTable?.addEventListener("click", async (e) => {
+  const btn = e.target;
+  if (!btn.classList.contains("js-del-reg")) return;
+  const id = btn.dataset.id;
+  const ok = confirm("Hapus pendaftar ini?");
+  if (!ok) return;
+  await fetchJSON(`${API_BASE}/registrations/${id}`, {
+    method: "DELETE",
+    headers: { ...authHeaders() },
+  });
+  await loadRegistrations();
 });
 
 async function init() {

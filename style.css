@@ -324,6 +324,7 @@ small.error{color: #000000; min-height: 14px}
 .admin__table th, .admin__table td{
   border-bottom: 1px solid var(--line); padding: 10px 8px; text-align:left; vertical-align:top
 }
+.admin__table td:last-child{white-space:nowrap}
 .admin__table th{font-weight:800}
 
 /* Responsive */

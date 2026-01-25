@@ -40,4 +40,14 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+router.delete("/:id", requireAuth, requireAdmin, async (req, res, next) => {
+  try {
+    const id = Number(req.params.id);
+    await prisma.registration.delete({ where: { id } });
+    return res.json({ ok: true });
+  } catch (err) {
+    return next(err);
+  }
+});
+
 module.exports = router;
