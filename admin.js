@@ -1,4 +1,5 @@
-const API_BASE = "/api";
+const API_BASE =
+  window.API_BASE || (location.protocol === "file:" ? "http://localhost:3000/api" : "/api");
 const tokenKey = "lsp_admin_token";
 
 const loginForm = document.getElementById("adminLogin");
@@ -134,7 +135,11 @@ loginForm?.addEventListener("submit", async (e) => {
     showPanel(true);
     await refreshAll();
   } catch (err) {
-    loginHint.textContent = err.message;
+    if (location.protocol === "file:") {
+      loginHint.textContent = "Server belum jalan. Jalankan backend dulu.";
+    } else {
+      loginHint.textContent = err.message;
+    }
   }
 });
 

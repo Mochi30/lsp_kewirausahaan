@@ -65,7 +65,8 @@ const FAQS = [
 // Helpers
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
-const API_BASE = "/api";
+const API_BASE =
+  window.API_BASE || (location.protocol === "file:" ? "http://localhost:3000/api" : "/api");
 
 async function fetchJSON(url, options) {
   const res = await fetch(url, options);
@@ -290,7 +291,11 @@ form?.addEventListener("submit", async (e) => {
     });
     toast("Berhasil! Data pendaftaran tersimpan.");
   } catch (err) {
-    toast("Gagal mengirim. Coba lagi.");
+    if (location.protocol === "file:") {
+      toast("Server belum jalan. Jalankan backend dulu.");
+    } else {
+      toast("Gagal mengirim. Coba lagi.");
+    }
     return;
   }
 
