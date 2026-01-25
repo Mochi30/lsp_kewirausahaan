@@ -66,7 +66,12 @@ const FAQS = [
 const $ = (sel) => document.querySelector(sel);
 const $$ = (sel) => Array.from(document.querySelectorAll(sel));
 const API_BASE =
-  window.API_BASE || (location.protocol === "file:" ? "http://localhost:3000/api" : "/api");
+  window.API_BASE ||
+  (location.hostname === "localhost" || location.hostname === "127.0.0.1"
+    ? "http://localhost:3000/api"
+    : location.protocol === "file:"
+    ? "http://localhost:3000/api"
+    : "/api");
 
 async function fetchJSON(url, options) {
   const res = await fetch(url, options);
