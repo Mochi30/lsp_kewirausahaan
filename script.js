@@ -304,21 +304,6 @@ form?.addEventListener("submit", async (e) => {
     return;
   }
 
-  // optional: open WhatsApp
-  const sendWA = $("#sendToWhatsApp")?.checked;
-  if (sendWA) {
-    const admin = "6280000000000"; // TODO: ganti nomor admin resmi
-    const msg = encodeURIComponent(
-      `Halo admin LSP Kewirausahaan, saya ingin daftar uji kompetensi.\n\n` +
-        `Nama: ${data.nama}\n` +
-        `Skema: ${data.skema}\n` +
-        `WhatsApp: ${data.wa}\n` +
-        `Email: ${data.email}\n` +
-        (data.catatan ? `Catatan: ${data.catatan}\n` : "")
-    );
-    window.open(`https://wa.me/${admin}?text=${msg}`, "_blank", "noopener,noreferrer");
-  }
-
   form.reset();
 });
 
