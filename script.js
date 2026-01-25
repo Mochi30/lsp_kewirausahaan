@@ -91,7 +91,8 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 // Render schemes
 async function renderSchemes() {
   const grid = $("#schemesGrid");
-  if (!grid) return;
+  const sel = $("#schemeSelect");
+  if (!grid && !sel) return;
 
   let schemes = SCHEMES;
   try {
@@ -101,25 +102,28 @@ async function renderSchemes() {
     // fallback to local data
   }
 
-  grid.innerHTML = schemes.map((s) => {
-    const items = s.competencies
-      .map((c) => `<li><span><i class="fa-solid fa-check"></i></span>${c}</li>`)
-      .join("");
-    return `
-      <article class="card">
-        <div class="card__top">
-          <h3><i class="fa-solid ${s.icon}"></i> ${s.title}</h3>
-          <span class="tag">Level ${s.level}</span>
-        </div>
-        <p class="muted">${s.description}</p>
-        <ul class="list">${items}</ul>
-      </article>
-    `;
-  }).join("");
+  if (grid) {
+    grid.innerHTML = schemes.map((s) => {
+      const items = s.competencies
+        .map((c) => `<li><span><i class="fa-solid fa-check"></i></span>${c}</li>`)
+        .join("");
+      return `
+        <article class="card">
+          <div class="card__top">
+            <h3><i class="fa-solid ${s.icon}"></i> ${s.title}</h3>
+            <span class="tag">Level ${s.level}</span>
+          </div>
+          <p class="muted">${s.description || ""}</p>
+          <ul class="list">${items}</ul>
+        </article>
+      `;
+    }).join("");
+  }
 
-  // populate select
-  const sel = $("#schemeSelect");
   if (sel) {
+    const first = sel.querySelector("option");
+    sel.innerHTML = "";
+    if (first) sel.appendChild(first);
     schemes.forEach((s) => {
       const opt = document.createElement("option");
       opt.value = s.title;

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - LSP Kewirausahaan</title>
+  <meta name="description" content="Dashboard admin untuk mengelola konten LSP Kewirausahaan." />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="header" id="top">
+    <nav class="nav container">
+      <a class="brand" href="index.html" aria-label="Beranda">
+        <img src="assets/logo.svg" class="brand__logo" alt="Logo LSP Kewirausahaan">
+        <span class="brand__name">LSP <span class="accent">Kewirausahaan</span></span>
+      </a>
+
+      <div class="admin__actions">
+        <button class="btn btn--ghost btn--small" id="logoutBtn" type="button">Logout</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin">
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2>Login Admin</h2>
+          <p class="muted">Masuk untuk mengelola data skema, FAQ, dan pendaftar.</p>
+        </div>
+
+        <form class="form card admin__login" id="adminLogin">
+          <label>
+            Email
+            <input type="email" name="email" placeholder="admin@email.com" required />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" placeholder="********" required />
+          </label>
+          <button class="btn" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+          <p class="hint" id="loginHint"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section--alt admin__panel" id="adminPanel">
+      <div class="container">
+        <div class="section__head">
+          <h2>Dashboard Admin</h2>
+          <p class="muted">Kelola konten dan lihat data pendaftaran.</p>
+        </div>
+
+        <div class="admin__grid">
+          <div class="card admin__box">
+            <h3>Tambah Skema</h3>
+            <form class="form" id="schemeForm">
+              <label>Judul
+                <input type="text" name="title" required />
+              </label>
+              <label>Level
+                <input type="text" name="level" required />
+              </label>
+              <label>Icon (FontAwesome class)
+                <input type="text" name="icon" placeholder="fa-rocket" />
+              </label>
+              <label>Deskripsi
+                <textarea name="description" rows="3"></textarea>
+              </label>
+              <label>Kompetensi (pisahkan dengan koma)
+                <textarea name="competencies" rows="3"></textarea>
+              </label>
+              <button class="btn" type="submit">Simpan Skema</button>
+            </form>
+          </div>
+
+          <div class="card admin__box">
+            <h3>Tambah FAQ</h3>
+            <form class="form" id="faqForm">
+              <label>Pertanyaan
+                <input type="text" name="question" required />
+              </label>
+              <label>Jawaban
+                <textarea name="answer" rows="4" required></textarea>
+              </label>
+              <button class="btn" type="submit">Simpan FAQ</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="admin__lists">
+          <div class="card admin__box">
+            <h3>Daftar Skema</h3>
+            <div id="schemesList" class="admin__list"></div>
+          </div>
+
+          <div class="card admin__box">
+            <h3>Daftar FAQ</h3>
+            <div id="faqsList" class="admin__list"></div>
+          </div>
+        </div>
+
+        <div class="card admin__box">
+          <h3>Pendaftar Sertifikasi</h3>
+          <div class="admin__table-wrap">
+            <table class="admin__table" id="registrationsTable">
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Email</th>
+                  <th>WhatsApp</th>
+                  <th>Skema</th>
+                  <th>Catatan</th>
+                  <th>Tanggal</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
