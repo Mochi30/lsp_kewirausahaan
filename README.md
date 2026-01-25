@@ -12,7 +12,7 @@ ambil/simpan ke `/api` jika backend aktif, dan fallback ke data lokal jika tidak
 - Database Postgres (mis. Supabase, Neon, Railway, Vercel Postgres)
 
 ### Setup lokal
-1) Copy `.env.example` menjadi `.env` dan isi `DATABASE_URL` + `JWT_SECRET`.
+1) Copy `.env.example` menjadi `.env` dan isi `DATABASE_URL`, `DIRECT_URL`, dan `JWT_SECRET`.
 2) Install dependency:
    - `npm install`
 3) Generate Prisma client:
@@ -29,7 +29,8 @@ ambil/simpan ke `/api` jika backend aktif, dan fallback ke data lokal jika tidak
 ### Deploy ke Vercel
 1) Pastikan repo berisi `api/` dan `vercel.json`.
 2) Set env vars di Vercel:
-   - `DATABASE_URL`
+   - `DATABASE_URL` (gunakan **pooling** URL dari Supabase, tambahkan `pgbouncer=true`)
+   - `DIRECT_URL` (gunakan **direct** URL untuk migrate lokal)
    - `JWT_SECRET`
    - `BOOTSTRAP_TOKEN` (sementara, untuk buat admin pertama)
 3) Deploy seperti biasa.
