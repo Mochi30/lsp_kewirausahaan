@@ -1,17 +1,17 @@
 /* LSP Kewirausahaan - Frontend Only (HTML/CSS/JS) */
 :root{
-  --bg: linear-gradient(180deg, #edf7f3 0%, #e4f2ee 100%);
+  --bg: linear-gradient(180deg, #eff8f4 0%, #e4f2ee 100%);
   --surface: #ffffff;
-  --surface-2: #f6fbf9;
+  --surface-2: #f3faf7;
   --text: #17312a;
   --muted: #4f6e63;
   --line: rgba(23, 49, 42, 0.12);
   --shadow: 0 18px 45px rgba(17, 54, 42, 0.12);
   --radius: 18px;
   --container: 1120px;
-  --accent: #5fc5a9;
-  --accent-dark: #1e7a65;
-  --accent-2: #f4c35f;
+  --accent: #5bbf9a;
+  --accent-dark: #1f7a63;
+  --accent-2: #f3c36a;
   --heroImg: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2070");
 }
 
@@ -291,6 +291,29 @@ small.error{color: #000000; min-height: 14px}
   font-size: 18px;
 }
 
+/* Highlights */
+.highlights{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.highlight-card{
+  display:flex; gap:14px; align-items:flex-start;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(23, 49, 42, 0.1);
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 14px 30px rgba(17, 54, 42, 0.08);
+}
+.highlight-card__icon{
+  width:44px; height:44px; border-radius: 14px;
+  display:grid; place-items:center;
+  background: rgba(95, 191, 154, 0.16);
+  color: var(--accent-dark);
+  font-size: 18px;
+  border: 1px solid rgba(23, 49, 42, 0.08);
+}
+
 /* Footer */
 .footer{
   padding: 34px 0 20px;
@@ -365,7 +388,7 @@ small.error{color: #000000; min-height: 14px}
 @media (max-width: 980px){
   .hero__grid{grid-template-columns: 1fr;}
   .hero__card .card{position: static;}
-  .features, .cards, .stats, .footer__grid, .page-hero__grid, .admin__grid, .admin__lists{grid-template-columns: 1fr;}
+  .features, .cards, .stats, .footer__grid, .page-hero__grid, .admin__grid, .admin__lists, .highlights{grid-template-columns: 1fr;}
   .quick-links{grid-template-columns: repeat(2, minmax(0, 1fr));}
 }
 
