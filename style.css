@@ -207,9 +207,9 @@ img{max-width:100%; display:block}
 .card__top{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom: 6px}
 .tag{
   font-size: 12px; padding: 6px 10px; border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.1);
-  background: rgba(255,255,255,0.7);
-  color: var(--muted);
+  border: 1px solid rgba(0,0,0,0.08);
+  background: var(--accent);
+  color: #0f3328;
 }
 
 /* Steps */
@@ -276,8 +276,8 @@ small.error{color: #000000; min-height: 14px}
   padding: 8px 12px;
   border-radius: 999px;
   border: 1px solid rgba(0,0,0,0.08);
-  background: rgba(255,255,255,0.92);
-  color: var(--accent-dark);
+  background: var(--accent);
+  color: #0f3328;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -289,6 +289,41 @@ small.error{color: #000000; min-height: 14px}
   background: rgba(255,255,255,0.95);
   border: 1px solid var(--line);
   font-size: 18px;
+}
+.link-card__media{
+  margin-top: 6px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(23, 49, 42, 0.08);
+}
+.link-card__media--top{
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+.link-card__media img{
+  width:100%;
+  height:140px;
+  object-fit: cover;
+  display:block;
+}
+
+/* Flow */
+.flow-grid{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.flow-media{
+  padding: 0;
+  overflow: hidden;
+}
+.flow-media img{
+  width:100%;
+  height:100%;
+  min-height: 280px;
+  object-fit: cover;
+  display:block;
 }
 
 /* Highlights */
@@ -388,7 +423,7 @@ small.error{color: #000000; min-height: 14px}
 @media (max-width: 980px){
   .hero__grid{grid-template-columns: 1fr;}
   .hero__card .card{position: static;}
-  .features, .cards, .stats, .footer__grid, .page-hero__grid, .admin__grid, .admin__lists, .highlights{grid-template-columns: 1fr;}
+  .features, .cards, .stats, .footer__grid, .page-hero__grid, .admin__grid, .admin__lists, .highlights, .flow-grid{grid-template-columns: 1fr;}
   .quick-links{grid-template-columns: repeat(2, minmax(0, 1fr));}
 }
 
