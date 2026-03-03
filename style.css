@@ -270,6 +270,18 @@ small.error{color: #000000; min-height: 14px}
   display:flex; flex-direction:column; gap:8px;
   transition: transform .15s ease, box-shadow .15s ease;
 }
+.link-card__action{
+  align-self:flex-start;
+  margin-top: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.92);
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
 .link-card:hover{transform: translateY(-2px); box-shadow: var(--shadow)}
 .link-card__icon{
   width:44px; height:44px; border-radius: 14px;
